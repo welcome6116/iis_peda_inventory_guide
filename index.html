@@ -1,0 +1,1672 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>個人資料檔案清冊暨風險評估表 填寫指引</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600&family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #1a2e4a;
+    --navy-dark: #0f1e33;
+    --navy-mid: #2a4a6e;
+    --navy-light: #e8eff7;
+    --navy-pale: #f3f7fc;
+    --gold: #b8942a;
+    --gold-light: #f5ecd4;
+    --gold-pale: #fdf8ee;
+    --white: #ffffff;
+    --gray-100: #f8f9fa;
+    --gray-200: #e9ecef;
+    --gray-400: #adb5bd;
+    --gray-600: #6c757d;
+    --gray-800: #343a40;
+    --sidebar-w: 260px;
+    --content-max: 820px;
+    --radius: 6px;
+    --radius-lg: 10px;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Noto Sans TC', sans-serif;
+    font-size: 15px;
+    line-height: 1.75;
+    color: var(--gray-800);
+    background: var(--gray-100);
+    display: flex;
+    min-height: 100vh;
+  }
+
+  /* ── Sidebar ── */
+  #sidebar {
+    width: var(--sidebar-w);
+    min-height: 100vh;
+    background: var(--navy-dark);
+    position: fixed;
+    top: 0; left: 0;
+    display: flex;
+    flex-direction: column;
+    z-index: 100;
+    overflow-y: auto;
+  }
+
+  .sidebar-header {
+    padding: 24px 20px 18px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+
+  .sidebar-logo {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--gold);
+    letter-spacing: 0.05em;
+    line-height: 1.5;
+    margin-bottom: 4px;
+  }
+
+  .sidebar-subtitle {
+    font-size: 11px;
+    color: rgba(255,255,255,0.45);
+    line-height: 1.4;
+  }
+
+  .sidebar-section-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    color: rgba(255,255,255,0.3);
+    text-transform: uppercase;
+    padding: 18px 20px 6px;
+  }
+
+  .sidebar-nav { padding: 0 10px 20px; flex: 1; }
+
+  .nav-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    border-radius: var(--radius);
+    cursor: pointer;
+    color: rgba(255,255,255,0.65);
+    font-size: 13px;
+    line-height: 1.4;
+    transition: background 0.15s, color 0.15s;
+    border: none;
+    background: none;
+    width: 100%;
+    text-align: left;
+    text-decoration: none;
+  }
+
+  .nav-item:hover { background: rgba(255,255,255,0.08); color: #fff; }
+  .nav-item.active { background: rgba(184,148,42,0.2); color: var(--gold); }
+
+  .nav-item .nav-num {
+    font-size: 10px;
+    min-width: 18px;
+    height: 18px;
+    border-radius: 3px;
+    background: rgba(255,255,255,0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  .nav-item.active .nav-num {
+    background: var(--gold);
+    color: var(--navy-dark);
+  }
+
+  /* ── Main content ── */
+  #main {
+    margin-left: var(--sidebar-w);
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .page-header {
+    background: var(--navy);
+    padding: 36px 48px 32px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .page-header::after {
+    content: '';
+    position: absolute;
+    right: -40px; top: -40px;
+    width: 200px; height: 200px;
+    border-radius: 50%;
+    border: 2px solid rgba(184,148,42,0.15);
+    pointer-events: none;
+  }
+
+  .page-header::before {
+    content: '';
+    position: absolute;
+    right: 20px; top: 20px;
+    width: 120px; height: 120px;
+    border-radius: 50%;
+    border: 1px solid rgba(184,148,42,0.1);
+    pointer-events: none;
+  }
+
+  .header-tag {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+
+  .header-title {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 24px;
+    font-weight: 600;
+    color: #fff;
+    line-height: 1.4;
+    margin-bottom: 8px;
+  }
+
+  .header-desc {
+    font-size: 13px;
+    color: rgba(255,255,255,0.5);
+    max-width: 560px;
+  }
+
+  .content-area {
+    padding: 40px 48px;
+    max-width: calc(var(--content-max) + 96px);
+  }
+
+  /* ── Section ── */
+  .section {
+    margin-bottom: 60px;
+    scroll-margin-top: 24px;
+  }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 24px;
+    padding-bottom: 14px;
+    border-bottom: 2px solid var(--navy-light);
+  }
+
+  .section-num {
+    width: 32px; height: 32px;
+    background: var(--navy);
+    color: #fff;
+    font-size: 13px;
+    font-weight: 700;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .section-title {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--navy);
+  }
+
+  /* ── Field card ── */
+  .field-card {
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius-lg);
+    margin-bottom: 16px;
+    overflow: hidden;
+  }
+
+  .field-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 20px;
+    cursor: pointer;
+    user-select: none;
+    border-left: 4px solid var(--navy);
+    transition: background 0.15s;
+  }
+
+  .field-header:hover { background: var(--navy-pale); }
+
+  .field-header.open { background: var(--navy-pale); }
+
+  .field-header-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .field-tag {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    background: var(--navy-light);
+    color: var(--navy);
+    padding: 3px 8px;
+    border-radius: 4px;
+  }
+
+  .field-name {
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--navy-dark);
+  }
+
+  .field-toggle {
+    font-size: 18px;
+    color: var(--gray-400);
+    transition: transform 0.2s;
+    line-height: 1;
+  }
+
+  .field-header.open .field-toggle { transform: rotate(180deg); color: var(--navy); }
+
+  .field-body {
+    display: none;
+    padding: 20px 24px 24px;
+    border-top: 1px solid var(--gray-200);
+  }
+
+  .field-body.open { display: block; }
+
+  /* ── Field body content ── */
+  .field-desc {
+    font-size: 14px;
+    color: var(--gray-600);
+    margin-bottom: 16px;
+    line-height: 1.8;
+  }
+
+  .field-what {
+    font-size: 14px;
+    margin-bottom: 16px;
+    line-height: 1.8;
+    color: var(--gray-800);
+  }
+
+  .info-box {
+    background: var(--navy-pale);
+    border: 1px solid var(--navy-light);
+    border-left: 3px solid var(--navy-mid);
+    border-radius: var(--radius);
+    padding: 12px 16px;
+    font-size: 13.5px;
+    color: var(--navy-dark);
+    line-height: 1.75;
+    margin-bottom: 14px;
+  }
+
+  .warn-box {
+    background: #fff8ec;
+    border: 1px solid #f5e0a8;
+    border-left: 3px solid var(--gold);
+    border-radius: var(--radius);
+    padding: 12px 16px;
+    font-size: 13.5px;
+    color: #5a4010;
+    line-height: 1.75;
+    margin-bottom: 14px;
+  }
+
+  .warn-box strong { color: var(--gold); }
+
+  .sub-label {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: var(--navy);
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    margin-top: 16px;
+  }
+
+  /* ── Risk table ── */
+  .risk-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13.5px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+  }
+
+  .risk-table th {
+    background: var(--navy);
+    color: #fff;
+    padding: 9px 14px;
+    text-align: left;
+    font-weight: 500;
+    font-size: 12px;
+    letter-spacing: 0.04em;
+  }
+
+  .risk-table th:first-child { border-radius: var(--radius) 0 0 0; }
+  .risk-table th:last-child { border-radius: 0 var(--radius) 0 0; }
+
+  .risk-table td {
+    padding: 9px 14px;
+    border-bottom: 1px solid var(--gray-200);
+    vertical-align: top;
+    line-height: 1.7;
+  }
+
+  .risk-table tr:last-child td { border-bottom: none; }
+  .risk-table tr:nth-child(even) td { background: var(--gray-100); }
+
+  .badge-h { background: #fde8e8; color: #8b1a1a; font-size: 12px; font-weight: 700; padding: 2px 8px; border-radius: 4px; white-space: nowrap; }
+  .badge-m { background: #fff3cd; color: #7a5000; font-size: 12px; font-weight: 700; padding: 2px 8px; border-radius: 4px; white-space: nowrap; }
+  .badge-l { background: #e6f4ea; color: #1a5c2a; font-size: 12px; font-weight: 700; padding: 2px 8px; border-radius: 4px; white-space: nowrap; }
+
+  /* ── Collapsible law list ── */
+  .law-toggle-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--navy);
+    color: #fff;
+    border: none;
+    padding: 10px 18px;
+    border-radius: var(--radius);
+    font-family: 'Noto Sans TC', sans-serif;
+    font-size: 13.5px;
+    font-weight: 500;
+    cursor: pointer;
+    margin-top: 12px;
+    transition: background 0.15s;
+  }
+
+  .law-toggle-btn:hover { background: var(--navy-mid); }
+
+  .law-toggle-btn .toggle-arrow {
+    font-size: 14px;
+    transition: transform 0.2s;
+    display: inline-block;
+  }
+
+  .law-toggle-btn.open .toggle-arrow { transform: rotate(180deg); }
+
+  .law-list-container {
+    display: none;
+    margin-top: 12px;
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius);
+    overflow: hidden;
+    max-height: 400px;
+    overflow-y: auto;
+  }
+
+  .law-list-container.open { display: block; }
+
+  .law-search {
+    padding: 10px 14px;
+    background: var(--gray-100);
+    border-bottom: 1px solid var(--gray-200);
+    position: sticky;
+    top: 0;
+    z-index: 5;
+  }
+
+  .law-search input {
+    width: 100%;
+    padding: 7px 12px;
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius);
+    font-family: 'Noto Sans TC', sans-serif;
+    font-size: 13px;
+    color: var(--gray-800);
+    background: var(--white);
+    outline: none;
+  }
+
+  .law-search input:focus { border-color: var(--navy-mid); }
+
+  .law-category-header {
+    padding: 8px 14px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    background: var(--navy-pale);
+    color: var(--navy);
+    border-bottom: 1px solid var(--navy-light);
+    position: sticky;
+    top: 46px;
+  }
+
+  .law-item {
+    display: flex;
+    gap: 0;
+    padding: 8px 14px;
+    border-bottom: 1px solid var(--gray-200);
+    font-size: 13px;
+    line-height: 1.6;
+    transition: background 0.1s;
+  }
+
+  .law-item:last-child { border-bottom: none; }
+  .law-item:hover { background: var(--navy-pale); }
+
+  .law-code {
+    min-width: 50px;
+    font-weight: 700;
+    color: var(--navy);
+    font-size: 12px;
+    padding-top: 1px;
+  }
+
+  .law-desc { color: var(--gray-800); }
+
+  .law-example {
+    font-size: 11.5px;
+    color: var(--gray-600);
+    margin-top: 3px;
+    line-height: 1.6;
+  }
+
+  .school-highlight {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    background: var(--gold-light);
+    color: #7a5500;
+    padding: 1px 6px;
+    border-radius: 3px;
+    margin-left: 6px;
+  }
+
+  /* ── Checklist ── */
+  .checklist {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .checklist li {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    font-size: 14px;
+    color: var(--gray-800);
+    padding: 6px 0;
+    line-height: 1.7;
+    border-bottom: 1px solid var(--gray-200);
+  }
+
+  .checklist li:last-child { border-bottom: none; }
+
+  .checklist li::before {
+    content: '▸';
+    color: var(--navy-mid);
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  /* ── Formula box ── */
+  .formula-box {
+    background: var(--navy);
+    color: #fff;
+    border-radius: var(--radius-lg);
+    padding: 20px 24px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    margin: 16px 0;
+  }
+
+  .formula-box .formula-sub {
+    font-size: 12px;
+    color: rgba(255,255,255,0.5);
+    margin-top: 6px;
+    letter-spacing: 0.04em;
+  }
+
+  /* ── Footer ── */
+  footer {
+    margin-top: auto;
+    border-top: 1px solid var(--gray-200);
+    padding: 20px 48px;
+    margin-left: 0;
+  }
+
+  .footer-inner {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .footer-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--navy);
+  }
+
+  .footer-year {
+    font-size: 12px;
+    color: var(--gray-600);
+  }
+
+  .footer-note {
+    font-size: 12px;
+    color: var(--gray-600);
+    line-height: 1.7;
+    padding: 12px 16px;
+    background: var(--gray-100);
+    border-radius: var(--radius);
+    border-left: 3px solid var(--gray-400);
+    margin-top: 4px;
+  }
+
+  /* ── Hidden items for search ── */
+  .law-item[data-hidden="true"] { display: none; }
+
+  /* ── Scrollbar ── */
+  .law-list-container::-webkit-scrollbar { width: 6px; }
+  .law-list-container::-webkit-scrollbar-track { background: var(--gray-100); }
+  .law-list-container::-webkit-scrollbar-thumb { background: var(--gray-400); border-radius: 3px; }
+
+  #sidebar::-webkit-scrollbar { width: 4px; }
+  #sidebar::-webkit-scrollbar-track { background: transparent; }
+  #sidebar::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.2); border-radius: 2px; }
+
+  /* ── Print button ── */
+  .print-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    margin-top: 18px;
+    padding: 8px 18px;
+    background: rgba(255,255,255,0.12);
+    color: rgba(255,255,255,0.85);
+    border: 1px solid rgba(255,255,255,0.25);
+    border-radius: var(--radius);
+    font-family: 'Noto Sans TC', sans-serif;
+    font-size: 13px;
+    cursor: pointer;
+    transition: background 0.15s, color 0.15s;
+  }
+  .print-btn:hover {
+    background: rgba(255,255,255,0.2);
+    color: #fff;
+  }
+
+  /* ── Back to top ── */
+  #back-to-top {
+    position: fixed;
+    bottom: 32px;
+    right: 32px;
+    width: 42px;
+    height: 42px;
+    background: var(--navy);
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s, transform 0.25s;
+    transform: translateY(8px);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+    z-index: 200;
+  }
+  #back-to-top.visible {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+  #back-to-top:hover { background: var(--navy-mid); }
+
+  /* ── Mobile top bar ── */
+  #mobile-topbar {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    height: 52px;
+    background: var(--navy-dark);
+    z-index: 300;
+    align-items: center;
+    padding: 0 16px;
+    gap: 12px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+
+  #hamburger {
+    width: 36px; height: 36px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    cursor: pointer;
+    border: none;
+    background: none;
+    padding: 4px;
+    border-radius: var(--radius);
+    flex-shrink: 0;
+    transition: background 0.15s;
+  }
+  #hamburger:hover { background: rgba(255,255,255,0.1); }
+  #hamburger span {
+    display: block;
+    width: 20px; height: 2px;
+    background: rgba(255,255,255,0.85);
+    border-radius: 2px;
+    transition: transform 0.22s, opacity 0.22s;
+    transform-origin: center;
+  }
+  #hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  #hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+  #hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+  .mobile-topbar-title {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--gold);
+    letter-spacing: 0.04em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  /* ── Sidebar overlay ── */
+  #sidebar-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.45);
+    z-index: 150;
+    opacity: 0;
+    transition: opacity 0.25s;
+  }
+  #sidebar-overlay.visible {
+    display: block;
+    opacity: 1;
+  }
+
+  /* ── Mobile breakpoint ── */
+  @media (max-width: 768px) {
+    #mobile-topbar { display: flex; }
+
+    #sidebar {
+      transform: translateX(-100%);
+      transition: transform 0.28s cubic-bezier(0.4,0,0.2,1);
+      z-index: 200;
+    }
+    #sidebar.open { transform: translateX(0); }
+
+    #main { margin-left: 0; }
+
+    .page-header {
+      padding: 24px 20px 20px;
+      padding-top: calc(52px + 24px);
+    }
+
+    .content-area { padding: 24px 20px; }
+
+    .header-title { font-size: 19px; }
+
+    footer { padding: 16px 20px; }
+
+    #back-to-top { bottom: 20px; right: 20px; }
+
+    .risk-table { font-size: 12.5px; }
+    .risk-table th, .risk-table td { padding: 7px 10px; }
+  }
+
+  /* ── Print / PDF media query ── */
+  @media print {
+    #sidebar, .print-btn, #back-to-top, #mobile-topbar, #sidebar-overlay { display: none !important; }
+    body { background: #fff; display: block; }
+    #main { margin-left: 0 !important; }
+    .page-header {
+      background: var(--navy) !important;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+      padding: 24px 32px !important;
+    }
+    .content-area { padding: 24px 32px !important; }
+    .section { break-inside: avoid; }
+    .law-list-container { display: none !important; }
+    .law-toggle-btn { display: none !important; }
+    footer { padding: 16px 32px !important; }
+    .risk-table th {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══ MOBILE TOP BAR ═══ -->
+<div id="mobile-topbar">
+  <button id="hamburger" onclick="toggleSidebar()" aria-label="開啟導覽選單">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="mobile-topbar-title">個人資料檔案清冊填寫指引</div>
+</div>
+
+<!-- Sidebar overlay -->
+<div id="sidebar-overlay" onclick="closeSidebar()"></div>
+
+<!-- ═══ SIDEBAR ═══ -->
+<nav id="sidebar">
+  <div class="sidebar-header">
+    <div class="sidebar-logo">義大國際高級中學</div>
+    <div class="sidebar-subtitle">個人資料檔案清冊<br>填寫指引</div>
+  </div>
+
+  <div class="sidebar-section-label">欄位說明</div>
+  <div class="sidebar-nav">
+    <a class="nav-item active" href="#sec-basic" onclick="setActive(this)">
+      <span class="nav-num">1</span>業務流程
+    </a>
+    <a class="nav-item" href="#sec-filename" onclick="setActive(this)">
+      <span class="nav-num">2</span>個人資料檔案名稱
+    </a>
+    <a class="nav-item" href="#sec-type" onclick="setActive(this)">
+      <span class="nav-num">3</span>個資檔案型態
+    </a>
+    <a class="nav-item" href="#sec-purpose" onclick="setActive(this)">
+      <span class="nav-num">4</span>特定目的
+    </a>
+    <a class="nav-item" href="#sec-category" onclick="setActive(this)">
+      <span class="nav-num">5</span>個人資料類別
+    </a>
+    <a class="nav-item" href="#sec-special" onclick="setActive(this)">
+      <span class="nav-num">6</span>特種個資
+    </a>
+    <a class="nav-item" href="#sec-amount" onclick="setActive(this)">
+      <span class="nav-num">7</span>保有數量
+    </a>
+    <a class="nav-item" href="#sec-storage" onclick="setActive(this)">
+      <span class="nav-num">8</span>個資存放位置與保護措施
+    </a>
+    <a class="nav-item" href="#sec-outsource" onclick="setActive(this)">
+      <span class="nav-num">9</span>委外處理
+    </a>
+    <a class="nav-item" href="#sec-collect" onclick="setActive(this)">
+      <span class="nav-num">10</span>蒐集
+    </a>
+    <a class="nav-item" href="#sec-process" onclick="setActive(this)">
+      <span class="nav-num">11</span>處理
+    </a>
+    <a class="nav-item" href="#sec-use" onclick="setActive(this)">
+      <span class="nav-num">12</span>利用
+    </a>
+    <a class="nav-item" href="#sec-retention" onclick="setActive(this)">
+      <span class="nav-num">13</span>保存
+    </a>
+    <a class="nav-item" href="#sec-destroy" onclick="setActive(this)">
+      <span class="nav-num">14</span>銷毀
+    </a>
+    <a class="nav-item" href="#sec-expose" onclick="setActive(this)">
+      <span class="nav-num">15</span>揭露
+    </a>
+    <div class="sidebar-section-label">風險判定</div>
+    <a class="nav-item" href="#sec-value" onclick="setActive(this)">
+      <span class="nav-num">V</span>個資價值
+    </a>
+    <a class="nav-item" href="#sec-impact" onclick="setActive(this)">
+      <span class="nav-num">I</span>衝擊程度評估
+    </a>
+    <a class="nav-item" href="#sec-prob" onclick="setActive(this)">
+      <span class="nav-num">P</span>發生可能性評估
+    </a>
+    <a class="nav-item" href="#sec-calc" onclick="setActive(this)">
+      <span class="nav-num">R</span>風險值計算
+    </a>
+  </div>
+</nav>
+
+<!-- ═══ MAIN ═══ -->
+<div id="main">
+  <header class="page-header">
+    <div class="header-tag">填寫指引 2026</div>
+    <div class="header-title">個人資料檔案清冊暨風險評估表</div>
+    <div class="header-desc">本指引供各處室承辦人員填寫年度個資盤點表使用，請逐欄參閱說明後據實填寫。</div>
+    <button class="print-btn" onclick="window.print()" title="列印 / 輸出 PDF">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+      列印 / 輸出 PDF
+    </button>
+  </header>
+
+  <div id="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="回到頂部">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="18 15 12 9 6 15"/></svg>
+  </div>
+
+  <div class="content-area">
+
+    <!-- ── SECTION 1：業務流程 ── -->
+    <section class="section" id="sec-basic">
+      <div class="section-header">
+        <div class="section-num">1</div>
+        <div class="section-title">業務流程</div>
+      </div>
+      <div class="info-box">
+        說明這筆個資屬於哪一個行政業務環節，描述資料的「使用情境」，讓閱表者能清楚理解資料在哪個工作流程中被產生或使用。
+      </div>
+      <div class="sub-label">填寫方式</div>
+      <ul class="checklist">
+        <li>以業務流程名稱作為描述，不需要填寫系統名稱或檔案名稱。</li>
+        <li>同一個個資檔案若涉及多個流程，可在備註欄說明，或分列多筆。</li>
+        <li>建議使用「動詞＋名詞」方式描述，例如：學籍管理、人事聘僱、健康檢查管理、場所門禁管理、志工出勤管理、緊急聯絡管理。</li>
+      </ul>
+    </section>
+
+    <!-- ── SECTION 2：個人資料檔案名稱 ── -->
+    <section class="section" id="sec-filename">
+      <div class="section-header">
+        <div class="section-num">2</div>
+        <div class="section-title">個人資料檔案名稱</div>
+      </div>
+      <div class="info-box">
+        填寫保存這份個資的<strong>檔案或系統的名稱</strong>，而非欄位名稱或資料的種類名稱。目的是讓稽核人員能夠找到實際存放個資的地方。
+      </div>
+      <div class="sub-label">填寫方式</div>
+      <ul class="checklist">
+        <li>紙本文件請填寫文件名稱，例如：學生緊急聯絡資料表、教職員工到職資料卡。</li>
+        <li>電子檔請填寫檔案名稱或資料夾名稱，例如：學生名冊（Excel）、教職員人事資料（Google Drive）。</li>
+        <li>系統資料庫請填寫系統名稱，例如：學籍管理系統、差勤管理系統、校務行政系統。</li>
+        <li>同一份個資若同時有紙本及電子版，請分列兩筆，分別描述。</li>
+      </ul>
+    </section>
+
+    <!-- ── SECTION 3：個資檔案型態 ── -->
+    <section class="section" id="sec-type">
+      <div class="section-header">
+        <div class="section-num">3</div>
+        <div class="section-title">個資檔案型態</div>
+      </div>
+      <div class="info-box">
+        依實際保存方式填寫，共三種類型。若同一份資料同時以多種型態保存，請<strong>全部填寫</strong>，不可只填其中一種。
+      </div>
+      <div class="sub-label">三種型態說明</div>
+      <table class="risk-table" style="margin-bottom:16px;">
+        <thead>
+          <tr><th>型態</th><th>說明</th><th>常見例子</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>電子檔</strong></td>
+            <td>儲存於電腦、隨身碟、雲端硬碟等的文件類檔案</td>
+            <td>Excel、Word、PDF、Google 文件、電子郵件附件</td>
+          </tr>
+          <tr>
+            <td><strong>資料庫</strong></td>
+            <td>儲存於資訊系統後台的結構化資料</td>
+            <td>校務系統、差勤系統、學籍系統的後端資料</td>
+          </tr>
+          <tr>
+            <td><strong>紙本</strong></td>
+            <td>實體紙張形式保存的文件</td>
+            <td>手寫表格、影印文件、申請書正本</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="warn-box">
+        <strong>注意：</strong>學籍系統通常同時存在「資料庫」（系統內）及「電子檔」（匯出的 Excel）兩種型態，請確認實際存放情況後據實填寫。
+      </div>
+    </section>
+
+    <!-- ── SECTION 4：特定目的 ── -->
+    <section class="section" id="sec-purpose">
+      <div class="section-header">
+        <div class="section-num">4</div>
+        <div class="section-title">特定目的</div>
+      </div>
+      <div class="info-box">
+        填寫保有這份個資的蒐集、處理、利用目的，須對應法規所訂定的特定目的代碼與名稱。<strong>一筆個資檔案可對應多個特定目的。</strong>
+      </div>
+      <div class="sub-label">填寫方式</div>
+      <ul class="checklist">
+        <li>填寫格式為：代碼＋名稱，例如：158 學生（員）（含畢、結業生）資料管理。</li>
+        <li>思考這份資料「為什麼要蒐集」，對應到最符合的目的代碼。</li>
+        <li>若有多個目的，以逗號分隔，例如：002 人事管理、031 社會保險、120 稅務行政。</li>
+      </ul>
+      <div class="sub-label">學校常用目的代碼</div>
+      <table class="risk-table" style="margin-bottom:16px;">
+        <thead><tr><th>代碼</th><th>名稱</th></tr></thead>
+        <tbody>
+          <tr><td>002</td><td>人事管理（含甄選、薪資、差勤、獎懲等）<span class="school-highlight">人事室</span></td></tr>
+          <tr><td>031</td><td>全民健康保險、勞工保險或其他社會保險<span class="school-highlight">人事室</span></td></tr>
+          <tr><td>043</td><td>志工管理<span class="school-highlight">學務處</span></td></tr>
+          <tr><td>063</td><td>非公務機關依法定義務所進行個人資料之蒐集處理及利用</td></tr>
+          <tr><td>064</td><td>保健醫療服務<span class="school-highlight">學務處</span></td></tr>
+          <tr><td>069</td><td>契約、類似契約或其他法律關係事務</td></tr>
+          <tr><td>109</td><td>教育或訓練行政<span class="school-highlight">各處室</span></td></tr>
+          <tr><td>116</td><td>場所進出安全管理<span class="school-highlight">教科處</span></td></tr>
+          <tr><td>120</td><td>稅務行政<span class="school-highlight">人事室</span></td></tr>
+          <tr><td>136</td><td>資（通）訊與資料庫管理<span class="school-highlight">教科處</span></td></tr>
+          <tr><td>157</td><td>調查、統計與研究分析</td></tr>
+          <tr><td>158</td><td>學生（員）（含畢、結業生）資料管理<span class="school-highlight">教務處</span></td></tr>
+          <tr><td>181</td><td>其他經營合於營業登記項目或組織章程所定之業務</td></tr>
+        </tbody>
+      </table>
+
+      <button class="law-toggle-btn" onclick="toggleLawList('purposes-list', this)">
+        查閱完整特定目的清單（001–182）<span class="toggle-arrow">▼</span>
+      </button>
+      <div class="law-list-container" id="purposes-list">
+        <div class="law-search">
+          <input type="text" placeholder="輸入代碼或關鍵字搜尋…" oninput="filterList('purposes-list', this.value)">
+        </div>
+        <div id="purposes-list-items">
+          <!-- generated by JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ── SECTION 5：個人資料類別 ── -->
+    <section class="section" id="sec-category">
+      <div class="section-header">
+        <div class="section-num">5</div>
+        <div class="section-title">個人資料類別</div>
+      </div>
+      <div class="info-box">
+        填寫這份個資檔案中包含哪些欄位所屬的資料類別，須對應法規所訂定的類別代碼（C 開頭）。<strong>一筆個資檔案通常包含多個類別，請盡量完整填寫。</strong>
+      </div>
+      <div class="sub-label">填寫方式</div>
+      <ul class="checklist">
+        <li>填寫格式為：代碼＋名稱，例如：C001 辨識個人者、C052 資格或技術。</li>
+        <li>逐一思考這份個資檔案中有哪些欄位，逐一對應到對應類別。</li>
+        <li>多個類別以逗號分隔。</li>
+      </ul>
+      <div class="sub-label">學校常用類別</div>
+      <table class="risk-table" style="margin-bottom:16px;">
+        <thead><tr><th>代碼</th><th>名稱</th><th>包含資料欄位例子</th></tr></thead>
+        <tbody>
+          <tr><td>C001</td><td>辨識個人者</td><td>姓名、地址、電話、電子郵件、相片</td></tr>
+          <tr><td>C002</td><td>辨識財務者</td><td>銀行帳號、信用卡號</td></tr>
+          <tr><td>C003</td><td>政府資料中之辨識者</td><td>身分證字號、護照號碼、殘障手冊號碼</td></tr>
+          <tr><td>C011</td><td>個人描述</td><td>年齡、性別、出生日期、國籍</td></tr>
+          <tr><td>C023</td><td>家庭其他成員之細節</td><td>緊急聯絡人姓名、親屬關係</td></tr>
+          <tr><td>C052</td><td>資格或技術</td><td>學歷、考試成績、訓練紀錄</td></tr>
+          <tr><td>C057</td><td>學生（員）、應考人紀錄</td><td>學習紀錄、成績、評語</td></tr>
+          <tr><td>C061</td><td>現行之受僱情形</td><td>職稱、受僱日期、工作地點</td></tr>
+          <tr><td>C065</td><td>工作、差勤紀錄</td><td>出缺勤、考績、獎懲</td></tr>
+          <tr><td>C068</td><td>薪資與預扣款</td><td>薪資、津貼、扣繳紀錄</td></tr>
+          <tr><td>C073</td><td>安全細節</td><td>帳號密碼、授權等級</td></tr>
+          <tr><td>C081</td><td>收入、所得、資產與投資</td><td>薪資所得、年終獎金</td></tr>
+          <tr><td>C111</td><td>健康紀錄</td><td>健康檢查報告、身心障礙手冊、診斷紀錄</td></tr>
+        </tbody>
+      </table>
+
+      <button class="law-toggle-btn" onclick="toggleLawList('categories-list', this)">
+        查閱完整個人資料類別清單（C001–C134）<span class="toggle-arrow">▼</span>
+      </button>
+      <div class="law-list-container" id="categories-list">
+        <div class="law-search">
+          <input type="text" placeholder="輸入代碼或關鍵字搜尋…" oninput="filterList('categories-list', this.value)">
+        </div>
+        <div id="categories-list-items">
+          <!-- generated by JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ── SECTION 6：特種個資 ── -->
+    <section class="section" id="sec-special">
+      <div class="section-header">
+        <div class="section-num">6</div>
+        <div class="section-title">特種個資</div>
+      </div>
+      <div class="info-box">
+        填寫「有」或「無」。特種個資受到個人資料保護法更嚴格的保護，若個資檔案中含有以下任一類型，即應填寫「有」。
+      </div>
+      <div class="sub-label">特種個資定義</div>
+      <table class="risk-table" style="margin-bottom:16px;">
+        <thead><tr><th>類型</th><th>說明</th><th>學校常見情境</th></tr></thead>
+        <tbody>
+          <tr><td>病歷</td><td>醫師記載的診療紀錄</td><td>學生就醫後的病假證明附件</td></tr>
+          <tr><td>醫療</td><td>醫療機構的相關紀錄</td><td>學生健康狀況記錄表</td></tr>
+          <tr><td>基因</td><td>基因檢測相關資料</td><td>（學校較少見）</td></tr>
+          <tr><td>性生活</td><td>性取向、性行為相關資料</td><td>（學校較少見）</td></tr>
+          <tr><td>健康檢查</td><td>身體健康檢查的報告與結果</td><td>教職員年度健康檢查報告、學生體格檢查表</td></tr>
+          <tr><td>犯罪前科</td><td>犯罪紀錄或判決資料</td><td>人事查核時的犯罪背景調查</td></tr>
+        </tbody>
+      </table>
+      <div class="warn-box">
+        <strong>特別注意：</strong>身心障礙手冊屬「醫療」類特種個資，應填「有」。學生請假時所附的醫院診斷書，若保存在個資檔案中，也屬醫療類特種個資。
+      </div>
+    </section>
+
+    <!-- ── SECTION 7：保有數量 ── -->
+    <section class="section" id="sec-amount">
+      <div class="section-header">
+        <div class="section-num">7</div>
+        <div class="section-title">保有數量（總數）</div>
+      </div>
+      <div class="info-box">
+        填寫目前實際保有的個資筆數總計，包含歷史資料，凡尚未依規定銷毀的都須計入。
+      </div>
+      <div class="sub-label">計算方式</div>
+      <ul class="checklist">
+        <li>每一個人的資料算一筆，例如保有 500 名學生的學籍資料，即填寫 500。</li>
+        <li>紙本與電子版若保存內容相同，以其中一種計算即可，無需重複計算。</li>
+        <li>若為資料庫系統，可請系統管理人員協助查詢筆數。</li>
+        <li>若無法精確計算，可填寫估算數量，例如：約 300 筆。</li>
+      </ul>
+      <div class="warn-box">
+        <strong>重要：</strong>此欄位的數量會直接影響風險評估中「對組織財務影響」的評分，2,000 筆以上為高衝擊，30 至 1,999 筆為中，30 筆以下為低，請務必如實填寫。
+      </div>
+    </section>
+
+    <!-- ── SECTION 8：個資存放位置與保護措施 ── -->
+    <section class="section" id="sec-storage">
+      <div class="section-header">
+        <div class="section-num">8</div>
+        <div class="section-title">個資存放位置與保護措施</div>
+      </div>
+      <div class="info-box">
+        說明這份個資實際存放的位置，以及針對此存放位置所採取的保護措施。存放位置與保護措施應相互對應，確保資料在保存期間不遭竊取、竄改或洩漏。
+      </div>
+      <div class="sub-label">存放位置填寫方式</div>
+      <table class="risk-table" style="margin-bottom:16px;">
+        <thead><tr><th>型態</th><th>存放位置說明</th><th>填寫範例</th></tr></thead>
+        <tbody>
+          <tr><td>紙本</td><td>說明存放的實體位置及管理方式</td><td>行政辦公室文件櫃（上鎖）、人事室專用儲藏室（門禁管制）</td></tr>
+          <tr><td>電子檔</td><td>說明儲存的裝置或平台</td><td>處室共用電腦（設有存取權限）、Google Drive 校內共用雲端</td></tr>
+          <tr><td>資料庫</td><td>說明系統名稱及存放伺服器</td><td>校務行政系統資料庫（位於校內伺服器機房）</td></tr>
+        </tbody>
+      </table>
+      <div class="sub-label">保護措施填寫方式</div>
+      <table class="risk-table" style="margin-bottom:16px;">
+        <thead><tr><th>型態</th><th>建議保護措施</th></tr></thead>
+        <tbody>
+          <tr><td>紙本</td><td>存放於上鎖文件櫃、設有門禁的儲藏室；文件取用須登記；複製需經主管核准</td></tr>
+          <tr><td>電子檔</td><td>設定存取權限（僅授權人員可開啟）；加密儲存；定期備份；禁止儲存於個人裝置</td></tr>
+          <tr><td>資料庫</td><td>帳號密碼保護；定期備份並確認可用性；留存系統存取日誌；定期弱點掃描</td></tr>
+        </tbody>
+      </table>
+      <div class="warn-box">
+        <strong>注意：</strong>存放位置與保護措施應同時填寫。若同一份個資同時有紙本及電子版，兩者的存放位置與保護措施請分別說明。
+      </div>
+    </section>
+
+    <!-- ── SECTION 9：委外處理 ── -->
+    <section class="section" id="sec-outsource">
+      <div class="section-header">
+        <div class="section-num">9</div>
+        <div class="section-title">委外處理</div>
+      </div>
+      <div class="info-box">
+        填寫是否有將這份個資的處理工作委託給學校以外的廠商或個人。若有，請填「有」並說明廠商名稱及處理內容；若無則填「無」。
+      </div>
+      <div class="sub-label">什麼是委外處理？</div>
+      <ul class="checklist">
+        <li>校務系統由外部廠商維護，廠商可能接觸系統內的學生或教職員資料。</li>
+        <li>委託外部廠商進行健康檢查，廠商取得教職員健康資料。</li>
+        <li>使用第三方雲端服務（如 Google Workspace、Microsoft 365）儲存含個資的檔案。</li>
+      </ul>
+      <div class="warn-box">
+        <strong>注意：</strong>有委外處理時，應確認雙方已簽訂含有個資保護條款的合約，包含廠商的保密義務、資料使用範圍、合約終止後資料的刪除或返還義務，以及違約罰則。
+      </div>
+    </section>
+
+    <!-- ── SECTION 10：蒐集 ── -->
+    <section class="section" id="sec-collect">
+      <div class="section-header">
+        <div class="section-num">10</div>
+        <div class="section-title">蒐集</div>
+      </div>
+      <div class="info-box">
+        說明這份個資如何取得，包含<strong>蒐集方式</strong>（資料從何而來）與<strong>法源依據</strong>（依據哪個法規蒐集此資料）。
+      </div>
+      <div class="sub-label">蒐集方式說明</div>
+      <table class="risk-table" style="margin-bottom:16px;">
+        <thead><tr><th>蒐集方式</th><th>說明</th></tr></thead>
+        <tbody>
+          <tr><td>直接蒐集</td><td>由資料本人填寫表格、口頭提供、或上傳文件。例如：新生入學填寫的個人資料表、員工到職填寫的人事資料。</td></tr>
+          <tr><td>間接蒐集</td><td>從其他機關或第三方取得。例如：從教育部平台匯入學籍資料、從健保局取得員工保險資料。</td></tr>
+        </tbody>
+      </table>
+      <div class="sub-label">法源依據說明</div>
+      <div class="field-what">
+        填寫依據哪個法規或規定蒐集、保存此份個資。以下為學校常見的法源參考：
+      </div>
+      <ul class="checklist">
+        <li>學籍相關：高級中等學校學生學籍管理辦法</li>
+        <li>教職員人事：教育人員任用條例、勞動基準法</li>
+        <li>健保、勞保：全民健康保險法、勞工保險條例</li>
+        <li>稅務申報：所得稅法</li>
+        <li>學生健康：學校衛生法</li>
+        <li>當事人同意：個人資料保護法第19條（搭配個資告知同意書）</li>
+      </ul>
+    </section>
+
+    <!-- ── SECTION 11：處理 ── -->
+    <section class="section" id="sec-process">
+      <div class="section-header">
+        <div class="section-num">11</div>
+        <div class="section-title">處理</div>
+      </div>
+      <div class="info-box">
+        「處理」係指為建立或利用個人資料檔案，所進行的各種操作動作。請依實際對這份個資所執行的操作，選填適用的動作。
+      </div>
+      <div class="sub-label">處理動作說明（可複選）</div>
+      <table class="risk-table" style="margin-bottom:16px;">
+        <thead><tr><th>動作</th><th>說明</th></tr></thead>
+        <tbody>
+          <tr><td>輸入</td><td>將個資鍵入系統或文件</td></tr>
+          <tr><td>儲存</td><td>將個資儲存至電腦、系統或紙本檔案</td></tr>
+          <tr><td>編輯</td><td>修改既有的個資內容</td></tr>
+          <tr><td>更正</td><td>針對錯誤資料進行更正</td></tr>
+          <tr><td>複製</td><td>複製個資至其他位置或媒體</td></tr>
+          <tr><td>檢索</td><td>查詢或搜尋特定個資</td></tr>
+          <tr><td>刪除</td><td>將個資從系統或文件中移除</td></tr>
+          <tr><td>輸出</td><td>將個資匯出、列印或轉檔</td></tr>
+          <tr><td>連結</td><td>與其他系統或資料進行連結</td></tr>
+          <tr><td>內部傳送</td><td>在機關內部不同單位之間傳遞個資</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- ── SECTION 12：利用 ── -->
+    <section class="section" id="sec-use">
+      <div class="section-header">
+        <div class="section-num">12</div>
+        <div class="section-title">利用</div>
+      </div>
+      <div class="info-box">
+        「利用」係指個資蒐集、處理以外的其他使用方式，包含提供給特定對象、作為特定用途等。<strong>利用必須在原本宣告的特定目的範圍內。</strong>
+      </div>
+      <div class="sub-label">填寫方式</div>
+      <ul class="checklist">
+        <li>說明這份個資實際用於哪些目的，例如：通知家長、統計分析、製作報表、報送主管機關、帳號驗證、聯絡學生。</li>
+      </ul>
+      <div class="warn-box">
+        <strong>注意：</strong>超出原特定目的範圍的利用，須另行取得當事人書面同意，否則即違反個資保護法。例如：原本為學籍管理蒐集的資料，若用於行銷活動，需重新取得同意。
+      </div>
+    </section>
+
+    <!-- ── SECTION 13：保存 ── -->
+    <section class="section" id="sec-retention">
+      <div class="section-header">
+        <div class="section-num">13</div>
+        <div class="section-title">保存</div>
+      </div>
+      <div class="info-box">
+        填寫這份個資的保存期限，以及保存期間的控制保護措施。所有個資檔案均應依據相關法規設有明確的保存年限。
+      </div>
+      <div class="sub-label">保存期限常見參考</div>
+      <table class="risk-table" style="margin-bottom:16px;">
+        <thead><tr><th>資料類型</th><th>保存年限</th><th>法規依據</th></tr></thead>
+        <tbody>
+          <tr><td>學籍資料</td><td>永久保存</td><td>高級中等學校學生學籍管理辦法</td></tr>
+          <tr><td>教職員人事資料</td><td>離職後一定年限（依規定）</td><td>各相關人事法規</td></tr>
+          <tr><td>健康檢查報告</td><td>依學校衛生法相關規定</td><td>學校衛生法</td></tr>
+          <tr><td>銷毀紀錄</td><td>5 年</td><td>個資管理作業規範</td></tr>
+          <tr><td>系統存取日誌</td><td>依資通安全相關規定</td><td>資安管理法相關辦法</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- ── SECTION 14：銷毀 ── -->
+    <section class="section" id="sec-destroy">
+      <div class="section-header">
+        <div class="section-num">14</div>
+        <div class="section-title">銷毀</div>
+      </div>
+      <div class="info-box">
+        填寫保存期限屆滿後的銷毀方式。不同媒體類型有不同的銷毀方式，<strong>銷毀作業需留存紀錄，紀錄須保存 5 年備查。</strong>
+      </div>
+      <div class="sub-label">各媒體銷毀方式</div>
+      <table class="risk-table" style="margin-bottom:16px;">
+        <thead><tr><th>媒體類型</th><th>建議銷毀方式</th></tr></thead>
+        <tbody>
+          <tr><td>紙本文件</td><td>碎紙機銷毀（交叉切割）或委外水銷</td></tr>
+          <tr><td>電子檔案</td><td>使用安全刪除工具覆寫刪除，勿僅移至資源回收桶</td></tr>
+          <tr><td>資料庫記錄</td><td>從資料庫中永久刪除相關記錄</td></tr>
+          <tr><td>硬碟、隨身碟</td><td>多次覆寫（DoD 7-pass 以上）或物理破壞</td></tr>
+          <tr><td>光碟</td><td>碎碟機銷毀或物理破壞</td></tr>
+        </tbody>
+      </table>
+      <div class="warn-box">
+        <strong>注意：</strong>銷毀作業應留存完整紀錄，建議包含銷毀日期、銷毀方式、銷毀數量、執行人員，視需要可拍照或錄影存檔。
+      </div>
+    </section>
+
+    <!-- ── SECTION 15：揭露 ── -->
+    <section class="section" id="sec-expose">
+      <div class="section-header">
+        <div class="section-num">15</div>
+        <div class="section-title">揭露</div>
+      </div>
+      <div class="info-box">
+        填寫是否有將資料提供給學校以外的第三方，包含主動揭露與應要求揭露。若無對外揭露，請填「無」。
+      </div>
+      <div class="sub-label">常見揭露情境</div>
+      <ul class="checklist">
+        <li>上傳至教育部或縣市政府的線上申報平台。</li>
+        <li>提供給保險公司辦理學生平安保險。</li>
+        <li>配合司法機關或政府機關的調查要求提供資料。</li>
+      </ul>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         RISK ASSESSMENT
+    ══════════════════════════════════════ -->
+
+    <!-- ── SECTION V：個資價值 ── -->
+    <section class="section" id="sec-value">
+      <div class="section-header">
+        <div class="section-num">V</div>
+        <div class="section-title">個資價值（V）</div>
+      </div>
+      <div class="info-box">
+        依個資檔案的敏感程度判斷其價值等級，共分三級。此值為計算風險值的基礎，<strong>含有特種個資者直接評為高（3）。</strong>
+      </div>
+      <table class="risk-table">
+        <thead>
+          <tr><th>等級</th><th>條件</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="badge-h">高（3）</span></td>
+            <td>含有特種個資（病歷、醫療、基因、性生活、健康檢查、犯罪前科）</td>
+          </tr>
+          <tr>
+            <td><span class="badge-m">中（2）</span></td>
+            <td>含有財務資訊（薪資、帳號等）或政府識別碼（身分證號、護照號碼等），但無特種個資</td>
+          </tr>
+          <tr>
+            <td><span class="badge-l">低（1）</span></td>
+            <td>僅含姓名、學號、員工編號等基本識別資料，不含財務資訊及特種個資</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- ── SECTION I：衝擊程度 ── -->
+    <section class="section" id="sec-impact">
+      <div class="section-header">
+        <div class="section-num">I</div>
+        <div class="section-title">衝擊程度評估（I）</div>
+      </div>
+      <div class="info-box">
+        衝擊程度從三個面向各別評估，最終取三項中的<strong>最大值</strong>作為衝擊評估值（I）。
+      </div>
+
+      <div class="sub-label">面向一：對當事人損害影響</div>
+      <table class="risk-table" style="margin-bottom:20px;">
+        <thead><tr><th>等級</th><th>說明</th></tr></thead>
+        <tbody>
+          <tr><td><span class="badge-h">高（3）</span></td><td>外洩後可能導致當事人身心受到危害、社會地位受損，或衍生財務損失，個人權益非常嚴重受損</td></tr>
+          <tr><td><span class="badge-m">中（2）</span></td><td>外洩後導致當事人隱私遭冒犯，個人權益嚴重受損</td></tr>
+          <tr><td><span class="badge-l">低（1）</span></td><td>外洩後僅造成當事人個人權益輕微受損</td></tr>
+        </tbody>
+      </table>
+
+      <div class="sub-label">面向二：對組織財務影響（以筆數判斷）</div>
+      <table class="risk-table" style="margin-bottom:20px;">
+        <thead><tr><th>等級</th><th>條件</th></tr></thead>
+        <tbody>
+          <tr><td><span class="badge-h">高（3）</span></td><td>個資檔案保有數量 2,000 筆以上</td></tr>
+          <tr><td><span class="badge-m">中（2）</span></td><td>個資檔案保有數量 30 筆以上，未滿 2,000 筆</td></tr>
+          <tr><td><span class="badge-l">低（1）</span></td><td>個資檔案保有數量未滿 30 筆</td></tr>
+        </tbody>
+      </table>
+
+      <div class="sub-label">面向三：對組織營運影響</div>
+      <table class="risk-table" style="margin-bottom:16px;">
+        <thead><tr><th>等級</th><th>說明</th></tr></thead>
+        <tbody>
+          <tr><td><span class="badge-h">高（3）</span></td><td>若遭禁止蒐集、處理或利用，或經命令刪除個資時，對全校聲譽及核心業務運作造成影響</td></tr>
+          <tr><td><span class="badge-m">中（2）</span></td><td>影響範圍限於單一部門的業務運作</td></tr>
+          <tr><td><span class="badge-l">低（1）</span></td><td>影響範圍僅限於該業務流程本身</td></tr>
+        </tbody>
+      </table>
+
+      <div class="info-box">
+        <strong>評估值（Max）</strong>：取上述三項面向評分中的最大值，即為最終衝擊程度評估值（I）。表格會自動計算，填寫三個面向的分數後即可。
+      </div>
+    </section>
+
+    <!-- ── SECTION P：可能性 ── -->
+    <section class="section" id="sec-prob">
+      <div class="section-header">
+        <div class="section-num">P</div>
+        <div class="section-title">發生可能性評估（P）</div>
+      </div>
+      <div class="info-box">
+        可能性從兩個面向各別評估，最終取兩項中的<strong>最大值</strong>作為可能性評估值（P）。
+      </div>
+
+      <div class="sub-label">面向一：作業管理規定</div>
+      <table class="risk-table" style="margin-bottom:20px;">
+        <thead><tr><th>等級</th><th>條件</th></tr></thead>
+        <tbody>
+          <tr><td><span class="badge-h">高（3）</span></td><td>未建立相關作業管理規定及文件，亦無任何安全控管措施</td></tr>
+          <tr><td><span class="badge-m">中（2）</span></td><td>已建立相關規定及文件，但部分未落實安全控管；或未建立規定，但已有部分安全控管</td></tr>
+          <tr><td><span class="badge-l">低（1）</span></td><td>已建立相關作業管理規定及文件，且確實落實安全控管</td></tr>
+        </tbody>
+      </table>
+
+      <div class="sub-label">面向二：個資檔案不當存取</div>
+      <table class="risk-table" style="margin-bottom:16px;">
+        <thead><tr><th>等級</th><th>條件</th></tr></thead>
+        <tbody>
+          <tr><td><span class="badge-h">高（3）</span></td><td>過去一年內曾發生一次（含）以上個資檔案不當存取事件</td></tr>
+          <tr><td><span class="badge-m">中（2）</span></td><td>過去三年內曾發生一次（含）以上個資檔案不當存取事件</td></tr>
+          <tr><td><span class="badge-l">低（1）</span></td><td>過去三年內從未發生個資檔案不當存取事件</td></tr>
+        </tbody>
+      </table>
+
+      <div class="info-box">
+        <strong>評估值（Max）</strong>：取上述兩項面向評分中的最大值，即為最終可能性評估值（P）。
+      </div>
+    </section>
+
+    <!-- ── SECTION R：風險值 ── -->
+    <section class="section" id="sec-calc">
+      <div class="section-header">
+        <div class="section-num">R</div>
+        <div class="section-title">風險值計算與風險情況</div>
+      </div>
+      <div class="formula-box">
+        風險值（R）＝ 個資價值（V）× 衝擊評估值（I）× 可能性評估值（P）
+        <div class="formula-sub">風險值範圍：最低 1 分，最高 27 分　｜　表格自動計算，無需手動填寫</div>
+      </div>
+
+      <div class="sub-label">風險情況對應</div>
+      <table class="risk-table">
+        <thead><tr><th>風險等級</th><th>分數範圍</th><th>處理方式</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><span class="badge-h">高風險</span></td>
+            <td>19 – 27 分</td>
+            <td>應優先制定改善計畫，設定改善期限及負責單位，並追蹤執行進度</td>
+          </tr>
+          <tr>
+            <td><span class="badge-m">中風險</span></td>
+            <td>10 – 18 分</td>
+            <td>納入改善計畫，視資源情況排定優先順序處理</td>
+          </tr>
+          <tr>
+            <td><span class="badge-l">低風險</span></td>
+            <td>1 – 9 分</td>
+            <td>維持現有管控措施，持續定期監控</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+  </div><!-- /.content-area -->
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-title">義大國際高中　個人資料管理　個人資料檔案清冊暨風險評估表填寫指引</div>
+      <div class="footer-year">2026　｜　本指引依個人資料保護法及相關施行細則編製</div>
+      <div class="footer-note">
+        本指引所列之說明與建議僅供參考，各處室仍應依實際業務執行情形填寫對應內容；如對填寫內容有疑義，請洽個人資料保護專責單位人員確認。
+      </div>
+    </div>
+  </footer>
+</div><!-- /#main -->
+
+<script>
+const PURPOSES = [
+  ["001","人身保險"],["002","人事管理（包含甄選、離職及所屬員工基本資訊、現職、學經歷、考試分發、終身學習訓練進修、考績獎懲、銓審、薪資待遇、差勤、福利措施、褫奪公權、特殊查核或其他人事措施）"],
+  ["003","入出國及移民"],["004","土地行政"],["005","工程技術服務業之管理"],["006","工業行政"],
+  ["007","不動產服務"],["008","中小企業及其他產業之輔導"],["009","中央銀行監理業務"],["010","公立與私立慈善機構管理"],
+  ["011","公共造產業務"],["012","公共衛生或傳染病防治"],["013","公共關係"],["014","公職人員財產申報、利益衝突迴避及政治獻金業務"],
+  ["015","戶政"],["016","文化行政"],["017","文化資產管理"],["018","水利、農田水利行政"],
+  ["019","火災預防與控制、消防行政"],["020","代理與仲介業務"],["021","外交及領事事務"],["022","外匯業務"],
+  ["023","民政"],["024","民意調查"],["025","犯罪預防、刑事偵查、執行、矯正、保護處分、犯罪被害人保護或更生保護事務"],["026","生態保育"],
+  ["027","立法或立法諮詢"],["028","交通及公共建設行政"],["029","公民營（辦）交通運輸、公共運輸及公共建設"],["030","仲裁"],
+  ["031","全民健康保險、勞工保險、農民保險、國民年金保險或其他社會保險"],["032","刑案資料管理"],["033","多層次傳銷經營"],["034","多層次傳銷監管"],
+  ["035","存款保險"],["036","存款與匯款"],["037","有價證券與有價證券持有人登記"],["038","行政執行"],
+  ["039","行政裁罰、行政調查"],["040","行銷（包含金控共同行銷業務）"],["041","住宅行政"],["042","兵役、替代役行政"],
+  ["043","志工管理"],["044","投資管理"],["045","災害防救行政"],["046","供水與排水服務"],
+  ["047","兩岸暨港澳事務"],["048","券幣行政"],["049","宗教、非營利組織業務"],["050","放射性物料管理"],
+  ["051","林業、農業、動植物防疫檢疫、農村再生及土石流防災管理"],["052","法人或團體對股東、會員（含股東、會員指派之代表）、董事、監察人、理事、監事或其他成員名冊之內部管理"],
+  ["053","法制行政"],["054","法律服務"],["055","法院執行業務"],["056","法院審判業務"],
+  ["057","社會行政"],["058","社會服務或社會工作"],["059","金融服務業依法令規定及金融監理需要，所為之蒐集處理及利用"],["060","金融爭議處理"],
+  ["061","金融監督、管理與檢查"],["062","青年發展行政"],["063","非公務機關依法定義務所進行個人資料之蒐集處理及利用"],["064","保健醫療服務"],
+  ["065","保險經紀、代理、公證業務"],["066","保險監理"],["067","信用卡、現金卡、轉帳卡或電子票證業務"],["068","信託業務"],
+  ["069","契約、類似契約或其他法律關係事務"],["070","客家行政"],["071","建築管理、都市更新、國民住宅事務"],["072","政令宣導"],
+  ["073","政府資訊公開、檔案管理及應用"],["074","政府福利金或救濟金給付行政"],["075","科技行政"],["076","科學工業園區、農業科技園區、文化創業園區、生物科技園區或其他園區管理行政"],
+  ["077","訂位、住宿登記與購票業務"],["078","計畫、管制考核與其他研考管理"],["079","飛航事故調查"],["080","食品、藥政管理"],
+  ["081","個人資料之合法交易業務"],["082","借款戶與存款戶存借作業綜合管理"],["083","原住民行政"],["084","捐供血服務"],
+  ["085","旅外國人急難救助"],["086","核子事故應變"],["087","核能安全管理"],["088","核貸與授信業務"],
+  ["089","海洋行政"],["090","消費者、客戶管理與服務"],["091","消費者保護"],["092","畜牧行政"],
+  ["093","財產保險"],["094","財產管理"],["095","財稅行政"],["096","退除役官兵輔導管理及其眷屬服務照顧"],
+  ["097","退撫基金或退休金管理"],["098","商業與技術資訊"],["099","國內外交流業務"],["100","國家安全行政、安全查核、反情報調查"],
+  ["101","國家經濟發展業務"],["102","國家賠償行政"],["103","專門職業及技術人員之管理、懲戒與救濟"],["104","帳務管理及債權交易業務"],
+  ["105","彩券業務"],["106","授信業務"],["107","採購與供應管理"],["108","救護車服務"],
+  ["109","教育或訓練行政"],["110","產學合作"],["111","票券業務"],["112","票據交換業務"],
+  ["113","陳情、請願、檢舉案件處理"],["114","勞工行政"],["115","博物館、美術館、紀念館或其他公、私營造物業務"],["116","場所進出安全管理"],
+  ["117","就業安置、規劃與管理"],["118","智慧財產權、光碟管理及其他相關行政"],["119","發照與登記"],["120","稅務行政"],
+  ["121","華僑資料管理"],["122","訴願及行政救濟"],["123","貿易推廣及管理"],["124","鄉鎮市調解"],
+  ["125","傳播行政與管理"],["126","債權整貼現及收買業務"],["127","募款（包含公益勸募）"],["128","廉政行政"],
+  ["129","會計與相關服務"],["130","會議管理"],["131","經營郵政業務郵政儲匯保險業務"],["132","經營傳播業務"],
+  ["133","經營電信業務與電信加值網路業務"],["134","試務、銓敘、保訓行政"],["135","資（通）訊服務"],["136","資（通）訊與資料庫管理"],
+  ["137","資通安全與管理"],["138","農產品交易"],["139","農產品推廣資訊"],["140","農糧行政"],
+  ["141","遊說業務行政"],["142","運動、競技活動"],["143","運動休閒業務"],["144","電信及傳播監理"],
+  ["145","僱用與服務管理"],["146","圖書館、出版品管理"],["147","漁業行政"],["148","網路購物及其他電子商務服務"],
+  ["149","蒙藏行政"],["150","輔助性與後勤支援管理"],["151","審計、監察調查及其他監察業務"],["152","廣告或商業行為管理"],
+  ["153","影視、音樂與媒體管理"],["154","徵信"],["155","標準、檢驗、度量衡行政"],["156","衛生行政"],
+  ["157","調查、統計與研究分析"],["158","學生（員）（含畢、結業生）資料管理"],["159","學術研究"],["160","憑證業務管理"],
+  ["161","輻射防護"],["162","選民服務管理"],["163","選舉、罷免及公民投票行政"],["164","營建業之行政管理"],
+  ["165","環境保護"],["166","證券、期貨、證券投資信託及顧問相關業務"],["167","警政"],["168","護照、簽證及文件證明處理"],
+  ["169","體育行政"],["170","觀光行政、觀光旅館業、旅館業、旅行業、觀光遊樂業及民宿經營管理業務"],
+  ["171","其他中央政府機關暨所屬機關構內部單位管理、公共事務監督、行政協助及相關業務"],
+  ["172","其他公共部門（包括行政法人、政府捐助財團法人及其他公法人）執行相關業務"],
+  ["173","其他公務機關對目的事業之監督管理"],["174","其他司法行政"],
+  ["175","其他地方政府機關暨所屬機關構內部單位管理、公共事務監督、行政協助及相關業務"],
+  ["176","其他自然人基於正當性目的所進行個人資料之蒐集處理及利用"],["177","其他金融管理業務"],
+  ["178","其他財政收入"],["179","其他財政服務"],["180","其他經營公共事業（例如：自來水、瓦斯等）業務"],
+  ["181","其他經營合於營業登記項目或組織章程所定之業務"],["182","其他諮詢與顧問服務"]
+];
+
+const CATEGORIES = [
+  {group:"識別類", items:[
+    ["C001","辨識個人者","姓名、職稱、住址、電話、行動電話、電子郵件、相片、指紋、電子簽章等"],
+    ["C002","辨識財務者","金融機構帳戶號碼、信用卡號、保險單號碼等"],
+    ["C003","政府資料中之辨識者","身分證統一編號、護照號碼、稅籍編號、殘障手冊號碼等"]
+  ]},
+  {group:"特徵類", items:[
+    ["C011","個人描述","年齡、性別、出生年月日、出生地、國籍、聲音等"],
+    ["C012","身體描述","身高、體重、血型等"],
+    ["C013","習慣","抽煙、喝酒等"],
+    ["C014","個性","個性等之評述意見"]
+  ]},
+  {group:"家庭情形", items:[
+    ["C021","家庭情形","結婚有無、配偶姓名、子女人數等"],
+    ["C022","婚姻之歷史","前次婚姻或同居、離婚或分居等細節"],
+    ["C023","家庭其他成員之細節","子女、受扶養人、父母、同居人等"],
+    ["C024","其他社會關係","朋友、同事及其他除家庭以外之關係等"]
+  ]},
+  {group:"社會情況", items:[
+    ["C031","住家及設施","住所地址、住用期間、租金等"],
+    ["C032","財產","動產或不動產"],
+    ["C033","移民情形","護照、工作許可、居留證明文件等"],
+    ["C034","旅行及其他遷徙細節","過去之遷徙、旅行細節等"],
+    ["C035","休閒活動及興趣","嗜好、運動及其他興趣等"],
+    ["C036","生活格調","使用消費品之種類及個人消費模式等"],
+    ["C037","慈善機構或其他團體之會員資格","俱樂部或志願團體等"],
+    ["C038","職業","學校校長、民意代表或其他各種職業等"],
+    ["C039","執照或其他許可","駕駛執照、行車執照等"],
+    ["C040","意外或其他事故","意外事件之主體、損害或傷害之性質等"],
+    ["C041","法院、檢察署或其他審判機關之程序","關於資料主體之訴訟及民事或刑事等相關資料"]
+  ]},
+  {group:"教育、考選、技術或其他專業", items:[
+    ["C051","學校紀錄","大學、專科或其他學校等"],
+    ["C052","資格或技術","學歷資格、專業技術、國家考試、考試成績或其他訓練紀錄等"],
+    ["C053","職業團體會員資格","會員資格類別及參加之紀錄等"],
+    ["C054","職業專長","專家、學者、顧問等"],
+    ["C055","委員會之會員資格","委員會之詳細情形、工作小組等"],
+    ["C056","著作","書籍、文章、報告、視聽出版品及其他著作等"],
+    ["C057","學生（員）、應考人紀錄","學習過程、成績、評分評語或其他學習或考試紀錄等"],
+    ["C058","委員工作紀錄","委員參加命題、閱卷、審查、口試及其他試務工作情形"]
+  ]},
+  {group:"受僱情形", items:[
+    ["C061","現行之受僱情形","僱主、工作職稱、等級、受僱日期、工時、工作地點等"],
+    ["C062","僱用經過","日期、受僱方式、介紹、僱用期間等"],
+    ["C063","離職經過","離職之日期、原因及條件等"],
+    ["C064","工作經驗","以前之僱主、以前之工作、失業期間及軍中服役情形等"],
+    ["C065","工作、差勤紀錄","出缺勤紀錄、考績紀錄、獎懲紀錄等"],
+    ["C066","健康與安全紀錄","職業疾病、安全、意外紀錄等"],
+    ["C067","工會及員工之會員資格","會員資格之詳情、在工會之職務等"],
+    ["C068","薪資與預扣款","薪水、工資、佣金、紅利、繳稅情形、年金之扣繳等"],
+    ["C069","受僱人所持有之財產","交付予受僱人之汽車、工具、書籍或其他設備等"],
+    ["C070","工作管理之細節","現行義務與責任、工作計畫、工作分配與期間等"],
+    ["C071","工作之評估細節","工作表現與潛力之評估等"],
+    ["C072","受訓紀錄","工作必須之訓練與已接受之訓練等"],
+    ["C073","安全細節","密碼、安全號碼與授權等級等"]
+  ]},
+  {group:"財務細節", items:[
+    ["C081","收入、所得、資產與投資","總收入、總所得、資產、儲蓄、投資收入等"],
+    ["C082","負債與支出","支出總額、租金支出、貸款支出等"],
+    ["C083","信用評等","信用等級、財務狀況與等級等"],
+    ["C084","貸款","貸款類別、貸款契約金額、貸款餘額等"],
+    ["C085","外匯交易紀錄",""],
+    ["C086","票據信用","支票存款、基本資料、退票資料等"],
+    ["C087","津貼、福利、贈款",""],
+    ["C088","保險細節","保險種類、保險範圍、保險金額等"],
+    ["C089","社會保險給付、就養給付及其他退休給付","生效日期、付出與收入之金額、受益人等"],
+    ["C091","資料主體所取得之財貨或服務",""],
+    ["C092","資料主體提供之財貨或服務",""],
+    ["C093","財務交易","收付金額、信用額度、往來紀錄等"],
+    ["C094","賠償","受請求賠償之細節、數額等"]
+  ]},
+  {group:"商業資訊", items:[
+    ["C101","資料主體之商業活動","商業種類、提供或使用之財貨或服務等"],
+    ["C102","約定或契約","關於交易、商業、法律或其他契約等"],
+    ["C103","與營業有關之執照","執照之有無、市場交易者之執照等"]
+  ]},
+  {group:"健康與其他", items:[
+    ["C111","健康紀錄","醫療報告、治療與診斷紀錄、檢驗結果、身心障礙種類及等級等"],
+    ["C112","性生活",""],
+    ["C113","種族或血統來源","去氧核糖核酸資料等"],
+    ["C114","交通違規之確定裁判及行政處分","裁判及行政處分之內容等"],
+    ["C115","其他裁判及行政處分","裁判及行政處分之內容等"],
+    ["C116","犯罪嫌疑資料","作案之情節、通緝資料等"],
+    ["C117","政治意見","政治上見解、選舉政見等"],
+    ["C118","政治團體之成員","政黨黨員或擔任之工作等"],
+    ["C119","對利益團體之支持","係利益團體或其他組織之會員、支持者等"],
+    ["C120","宗教信仰",""],
+    ["C121","其他信仰",""]
+  ]},
+  {group:"其他各類資訊", items:[
+    ["C131","書面文件之檢索","未經自動化機器處理之書面文件之索引或代號等"],
+    ["C132","未分類之資料","無法歸類之信件、檔案、報告或電子郵件等"],
+    ["C133","輻射劑量資料","人員或建築之輻射劑量資料等"],
+    ["C134","國家情報工作資料",""]
+  ]}
+];
+
+const SCHOOL_PURPOSES = ["002","031","043","063","064","069","109","116","120","136","157","158","181"];
+
+function buildPurposesList() {
+  const container = document.getElementById('purposes-list-items');
+  let html = '';
+  PURPOSES.forEach(([code, name]) => {
+    const isSchool = SCHOOL_PURPOSES.includes(code);
+    const schoolTag = isSchool ? '<span class="school-highlight">學校常用</span>' : '';
+    html += `<div class="law-item" data-text="${code} ${name}">
+      <span class="law-code">${code}</span>
+      <span class="law-desc">${name}${schoolTag}</span>
+    </div>`;
+  });
+  container.innerHTML = html;
+}
+
+function buildCategoriesList() {
+  const container = document.getElementById('categories-list-items');
+  let html = '';
+  CATEGORIES.forEach(({group, items}) => {
+    html += `<div class="law-category-header">${group}</div>`;
+    items.forEach(([code, name, example]) => {
+      const exHTML = example ? `<div class="law-example">例：${example}</div>` : '';
+      html += `<div class="law-item" data-text="${code} ${name} ${example}">
+        <span class="law-code">${code}</span>
+        <div class="law-desc">${name}${exHTML}</div>
+      </div>`;
+    });
+  });
+  container.innerHTML = html;
+}
+
+function toggleLawList(id, btn) {
+  const container = document.getElementById(id);
+  const isOpen = container.classList.contains('open');
+  container.classList.toggle('open', !isOpen);
+  btn.classList.toggle('open', !isOpen);
+}
+
+function filterList(containerId, query) {
+  const q = query.trim().toLowerCase();
+  const container = document.getElementById(containerId);
+  container.querySelectorAll('.law-item').forEach(item => {
+    const text = item.getAttribute('data-text').toLowerCase();
+    item.setAttribute('data-hidden', q && !text.includes(q) ? 'true' : 'false');
+  });
+}
+
+function setActive(el) {
+  document.querySelectorAll('.nav-item').forEach(i => i.classList.remove('active'));
+  el.classList.add('active');
+  // close sidebar on mobile after nav click
+  if (window.innerWidth <= 768) closeSidebar();
+}
+
+function toggleSidebar() {
+  const sidebar = document.getElementById('sidebar');
+  const overlay = document.getElementById('sidebar-overlay');
+  const btn = document.getElementById('hamburger');
+  const isOpen = sidebar.classList.contains('open');
+  if (isOpen) {
+    closeSidebar();
+  } else {
+    sidebar.classList.add('open');
+    overlay.classList.add('visible');
+    btn.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+}
+
+function closeSidebar() {
+  const sidebar = document.getElementById('sidebar');
+  const overlay = document.getElementById('sidebar-overlay');
+  const btn = document.getElementById('hamburger');
+  sidebar.classList.remove('open');
+  overlay.classList.remove('visible');
+  btn.classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+buildPurposesList();
+buildCategoriesList();
+
+window.addEventListener('scroll', function() {
+  const btn = document.getElementById('back-to-top');
+  if (window.scrollY > 300) {
+    btn.classList.add('visible');
+  } else {
+    btn.classList.remove('visible');
+  }
+});
+</script>
+</body>
+</html>
